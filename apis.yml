@@ -1,0 +1,196 @@
+aid: nomic-ai
+url: https://raw.githubusercontent.com/api-evangelist/nomic-ai/refs/heads/main/apis.yml
+name: Nomic AI
+kind: company
+description: >-
+  Nomic AI builds open and accessible AI infrastructure. The company is known
+  for the open-source Nomic Embed family (nomic-embed-text-v1.5,
+  nomic-embed-vision-v1.5) of multilingual text and vision embedding models,
+  the Nomic Atlas platform for exploring, labelling, and operationalising
+  unstructured data via interactive 2D maps, and the GPT4All open-source
+  ecosystem for running large language models locally on consumer CPUs and
+  GPUs. The Nomic Atlas REST API at api-atlas.nomic.ai exposes endpoints for
+  datasets, maps, embeddings, file parsing, and task status, with official
+  Python and TypeScript SDKs.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Embeddings
+  - Vector Database
+  - Data Exploration
+  - LLM
+  - Open Source
+  - RAG
+  - Atlas
+created: '2026-05-23'
+modified: '2026-05-23'
+specificationVersion: '0.19'
+apis:
+  - aid: nomic-ai:atlas
+    name: Nomic Atlas API
+    description: >-
+      REST API for the Nomic Atlas platform. Exposes endpoints for creating
+      and managing datasets, building 2D semantic maps over text and image
+      data, querying and updating points, and orchestrating long-running map
+      build jobs. Authentication is via an Atlas-issued API key.
+    humanURL: https://docs.nomic.ai/reference/getting-started
+    baseURL: https://api-atlas.nomic.ai
+    tags:
+      - Datasets
+      - Maps
+      - Vector Search
+      - REST
+    properties:
+      - type: Documentation
+        url: https://docs.nomic.ai/reference/getting-started
+  - aid: nomic-ai:embeddings
+    name: Nomic Embedding API
+    description: >-
+      Hosted embedding endpoint backed by the Nomic Embed model family
+      (nomic-embed-text-v1.5 and nomic-embed-vision-v1.5). Returns dense
+      multilingual text and image vectors with Matryoshka-style configurable
+      output dimensions for retrieval, clustering, and RAG.
+    humanURL: https://docs.nomic.ai/atlas/embeddings-and-retrieval/text-embeddings
+    baseURL: https://api-atlas.nomic.ai
+    tags:
+      - Embeddings
+      - Text
+      - Vision
+      - Multilingual
+    properties:
+      - type: Documentation
+        url: https://docs.nomic.ai/atlas/embeddings-and-retrieval/text-embeddings
+  - aid: nomic-ai:file-parsing
+    name: Nomic Atlas File Parsing API
+    description: >-
+      Upload, parse, and extract endpoints for ingesting PDFs and other
+      documents into Atlas as structured text and tables prior to embedding
+      and map building.
+    humanURL: https://docs.nomic.ai/atlas/data/file-upload
+    baseURL: https://api-atlas.nomic.ai
+    tags:
+      - File Upload
+      - Parsing
+      - Extraction
+    properties:
+      - type: Documentation
+        url: https://docs.nomic.ai/atlas/data/file-upload
+  - aid: nomic-ai:task-status
+    name: Nomic Atlas Task Status API
+    description: >-
+      Polling endpoint that returns the status of long-running Atlas jobs
+      (map builds, embeddings, dataset operations).
+    humanURL: https://docs.nomic.ai/reference/getting-started
+    baseURL: https://api-atlas.nomic.ai
+    tags:
+      - Jobs
+      - Tasks
+      - Async
+    properties:
+      - type: Documentation
+        url: https://docs.nomic.ai/reference/getting-started
+  - aid: nomic-ai:python-sdk
+    name: Nomic Python SDK
+    description: >-
+      Official Python client (nomic) for the Atlas platform, embedding API,
+      and dataset/map workflows.
+    humanURL: https://github.com/nomic-ai/nomic
+    baseURL: https://github.com/nomic-ai/nomic
+    tags:
+      - SDK
+      - Python
+      - Atlas
+    properties:
+      - type: Repository
+        url: https://github.com/nomic-ai/nomic
+      - type: Package
+        url: https://pypi.org/project/nomic/
+  - aid: nomic-ai:typescript-sdk
+    name: Nomic TypeScript SDK
+    description: >-
+      Official TypeScript / JavaScript client for the Nomic Atlas API.
+    humanURL: https://github.com/nomic-ai/ts-nomic
+    baseURL: https://github.com/nomic-ai/ts-nomic
+    tags:
+      - SDK
+      - TypeScript
+      - JavaScript
+    properties:
+      - type: Repository
+        url: https://github.com/nomic-ai/ts-nomic
+  - aid: nomic-ai:gpt4all
+    name: GPT4All
+    description: >-
+      Open-source ecosystem for running large language models locally on
+      consumer hardware. Ships a desktop chat client, a local OpenAI-compatible
+      HTTP server, and Python and TypeScript bindings. MIT-licensed.
+    humanURL: https://www.nomic.ai/gpt4all
+    baseURL: https://github.com/nomic-ai/gpt4all
+    tags:
+      - LLM
+      - Local Inference
+      - Open Source
+      - On-Device
+    properties:
+      - type: Repository
+        url: https://github.com/nomic-ai/gpt4all
+      - type: Website
+        url: https://www.nomic.ai/gpt4all
+  - aid: nomic-ai:embed-text-model
+    name: nomic-embed-text-v1.5 (Open Weights)
+    description: >-
+      Open-weights multilingual text embedding model published on Hugging Face,
+      Apache-2.0 licensed. Supports Matryoshka-style truncatable embeddings and
+      task-type prefixes.
+    humanURL: https://huggingface.co/nomic-ai/nomic-embed-text-v1.5
+    baseURL: https://huggingface.co/nomic-ai/nomic-embed-text-v1.5
+    tags:
+      - Model
+      - Embeddings
+      - Open Weights
+      - Hugging Face
+    properties:
+      - type: Repository
+        url: https://huggingface.co/nomic-ai/nomic-embed-text-v1.5
+  - aid: nomic-ai:embed-vision-model
+    name: nomic-embed-vision-v1.5 (Open Weights)
+    description: >-
+      Open-weights vision embedding model that shares an embedding space with
+      nomic-embed-text-v1.5 to support cross-modal retrieval. Published on
+      Hugging Face.
+    humanURL: https://huggingface.co/nomic-ai/nomic-embed-vision-v1.5
+    baseURL: https://huggingface.co/nomic-ai/nomic-embed-vision-v1.5
+    tags:
+      - Model
+      - Embeddings
+      - Vision
+      - Open Weights
+    properties:
+      - type: Repository
+        url: https://huggingface.co/nomic-ai/nomic-embed-vision-v1.5
+common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/nomic-ai
+  - type: Website
+    url: https://www.nomic.ai/
+  - type: Documentation
+    url: https://docs.nomic.ai/
+  - type: GitHub
+    url: https://github.com/nomic-ai
+  - type: HuggingFace
+    url: https://huggingface.co/nomic-ai
+  - type: Plans
+    url: plans/nomic-ai-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/nomic-ai-rate-limits.yml
+  - type: FinOps
+    url: finops/nomic-ai-finops.yml
+integrations:
+  - name: LangChain
+  - name: LlamaIndex
+  - name: Hugging Face
+  - name: Ollama
+  - name: Pinecone
+  - name: Weaviate
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
