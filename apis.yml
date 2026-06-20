@@ -12,7 +12,7 @@ description: >-
   GPUs. The Nomic Atlas REST API at api-atlas.nomic.ai exposes endpoints for
   datasets, maps, embeddings, file parsing, and task status, with official
   Python and TypeScript SDKs.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Embeddings
   - Vector Database
