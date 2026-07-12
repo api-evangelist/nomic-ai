@@ -1,0 +1,12 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://security.nomic.ai/
+url: https://security.nomic.ai/
+certifications:
+- SOC 2
+evidence:
+- source: https://security.nomic.ai/
+  keywords:
+  - soc 2
+  - trust center

@@ -168,6 +168,14 @@ apis:
       - type: Repository
         url: https://huggingface.co/nomic-ai/nomic-embed-vision-v1.5
 common:
+  - type: TrustCenter
+    url: security/nomic-ai-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/nomic-ai-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/nomic-ai-domain-security.yml
+  - type: Authentication
+    url: authentication/nomic-ai-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/nomic-ai
   - type: Website

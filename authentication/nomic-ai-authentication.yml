@@ -1,0 +1,15 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/nomic-ai-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: |-
+    API key passed as a Bearer token in the Authorization header:
+    `Authorization: Bearer NOMIC_API_KEY`.
+  sources:
+  - openapi/nomic-ai-openapi.yml
