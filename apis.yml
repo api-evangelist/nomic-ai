@@ -168,6 +168,8 @@ apis:
       - type: Repository
         url: https://huggingface.co/nomic-ai/nomic-embed-vision-v1.5
 common:
+  - type: AgenticAccess
+    url: agentic-access/nomic-ai-agentic-access.yml
   - type: TrustCenter
     url: security/nomic-ai-trust-center.yml
   - type: VulnerabilityDisclosure
