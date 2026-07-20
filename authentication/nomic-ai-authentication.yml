@@ -10,6 +10,6 @@ schemes:
   scheme: bearer
   description: |-
     API key passed as a Bearer token in the Authorization header:
-    `Authorization: Bearer NOMIC_API_KEY`.
+    `Authorization: Bearer [example key]`.
   sources:
   - openapi/nomic-ai-openapi.yml
