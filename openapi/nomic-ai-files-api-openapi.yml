@@ -1,0 +1,129 @@
+openapi: 3.1.0
+info:
+  title: Nomic Atlas Embeddings Files API
+  version: '1.0'
+  description: 'REST API for the Nomic Platform (Atlas), covering text embedding generation,
+
+    file upload, document parsing, and asynchronous task status. Documented from
+
+    the public Nomic developer docs at https://docs.nomic.ai.
+
+    '
+  contact:
+    name: Nomic AI
+    url: https://docs.nomic.ai
+servers:
+- url: https://api-atlas.nomic.ai
+  description: Production
+security:
+- bearerAuth: []
+tags:
+- name: Files
+paths:
+  /v1/upload:
+    post:
+      operationId: createUploadUrls
+      summary: Get presigned URLs to upload files
+      description: Get URLs to upload files for use in other tasks (parsing, extraction, etc.).
+      tags:
+      - Files
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                files:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      filename:
+                        type: string
+                      content_type:
+                        type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  uploads:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: true
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+  /v1/parse:
+    post:
+      operationId: parseFile
+      summary: Parse a file into structured information
+      description: Parse a PDF file with configurable chunking strategies and optional embedding generation. Returns a task id for asynchronous polling.
+      tags:
+      - Files
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                file_id:
+                  type: string
+                  description: Identifier of the previously uploaded file.
+                chunking_strategy:
+                  type: string
+                generate_embeddings:
+                  type: boolean
+      responses:
+        '201':
+          description: Parsing task created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  task_id:
+                    type: string
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+components:
+  responses:
+    ValidationError:
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: array
+                items:
+                  type: object
+                  additionalProperties: true
+    Forbidden:
+      description: The user is not authorized to perform this action.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'API key passed as a Bearer token in the Authorization header:
+
+        `Authorization: Bearer NOMIC_API_KEY`.
+
+        '

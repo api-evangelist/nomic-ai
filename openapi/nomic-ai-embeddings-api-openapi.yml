@@ -1,0 +1,101 @@
+openapi: 3.1.0
+info:
+  title: Nomic Atlas Embeddings API
+  version: '1.0'
+  description: 'REST API for the Nomic Platform (Atlas), covering text embedding generation,
+
+    file upload, document parsing, and asynchronous task status. Documented from
+
+    the public Nomic developer docs at https://docs.nomic.ai.
+
+    '
+  contact:
+    name: Nomic AI
+    url: https://docs.nomic.ai
+servers:
+- url: https://api-atlas.nomic.ai
+  description: Production
+security:
+- bearerAuth: []
+tags:
+- name: Embeddings
+paths:
+  /v1/embedding/text:
+    post:
+      operationId: embedText
+      summary: Generate text embeddings
+      description: Generate embeddings for one or more text inputs using a Nomic embedding model.
+      tags:
+      - Embeddings
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - texts
+              properties:
+                model:
+                  type: string
+                  description: Embedding model to use.
+                  example: nomic-embed-text-v1.5
+                texts:
+                  type: array
+                  description: Texts to embed.
+                  items:
+                    type: string
+                task_type:
+                  type: string
+                  description: Intended usage for the embedding.
+                  enum:
+                  - search_document
+                  - search_query
+                  - classification
+                  - clustering
+                  default: search_document
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  embeddings:
+                    type: array
+                    items:
+                      type: array
+                      items:
+                        type: number
+                        format: float
+                  model:
+                    type: string
+                  usage:
+                    type: object
+                    additionalProperties: true
+        '422':
+          $ref: '#/components/responses/ValidationError'
+components:
+  responses:
+    ValidationError:
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: array
+                items:
+                  type: object
+                  additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'API key passed as a Bearer token in the Authorization header:
+
+        `Authorization: Bearer NOMIC_API_KEY`.
+
+        '

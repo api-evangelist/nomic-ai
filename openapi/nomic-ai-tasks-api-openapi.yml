@@ -1,0 +1,86 @@
+openapi: 3.1.0
+info:
+  title: Nomic Atlas Embeddings Tasks API
+  version: '1.0'
+  description: 'REST API for the Nomic Platform (Atlas), covering text embedding generation,
+
+    file upload, document parsing, and asynchronous task status. Documented from
+
+    the public Nomic developer docs at https://docs.nomic.ai.
+
+    '
+  contact:
+    name: Nomic AI
+    url: https://docs.nomic.ai
+servers:
+- url: https://api-atlas.nomic.ai
+  description: Production
+security:
+- bearerAuth: []
+tags:
+- name: Tasks
+paths:
+  /v1/task/{task_id}:
+    get:
+      operationId: getTaskStatus
+      summary: Get the status of a task
+      description: Retrieve the status of an asynchronous task (parsing, extraction).
+      tags:
+      - Tasks
+      parameters:
+      - in: path
+        name: task_id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Task status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  task_id:
+                    type: string
+                  status:
+                    type: string
+                  result:
+                    type: object
+                    additionalProperties: true
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+components:
+  responses:
+    ValidationError:
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: array
+                items:
+                  type: object
+                  additionalProperties: true
+    Forbidden:
+      description: The user is not authorized to perform this action.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'API key passed as a Bearer token in the Authorization header:
+
+        `Authorization: Bearer NOMIC_API_KEY`.
+
+        '
