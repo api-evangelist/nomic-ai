@@ -1,0 +1,18 @@
+{
+  "provider": "nomic-ai",
+  "sources": [
+    "nomic-ai-embeddings-api-openapi.yml",
+    "nomic-ai-files-api-openapi.yml",
+    "nomic-ai-tasks-api-openapi.yml"
+  ],
+  "outputs": [
+    "nomic-ai-embeddings-api-openapi.yml",
+    "nomic-ai-files-api-openapi.yml",
+    "nomic-ai-tasks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
