@@ -203,6 +203,10 @@ apis:
   - type: OpenAPI
     url: openapi/nomic-ai-tasks-api-openapi.yml
 common:
+  - type: IssueTracker
+    url: https://github.com/nomic-ai/nomic/issues
+  - type: Releases
+    url: https://github.com/nomic-ai/nomic/releases
   - type: AgenticAccess
     url: agentic-access/nomic-ai-agentic-access.yml
   - type: TrustCenter
