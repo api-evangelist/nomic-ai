@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nomic Atlas Embeddings Files API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Files",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get presigned URLs to upload files",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-atlas.nomic.ai/v1/upload",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get URLs to upload files for use in other tasks (parsing, extraction, etc.)."
+        },
+        {
+          "info": {
+            "name": "Parse a file into structured information",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api-atlas.nomic.ai/v1/parse",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Parse a PDF file with configurable chunking strategies and optional embedding generation. Returns a task id for asynchronous polling."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,197 @@
+{
+  "item": [
+    {
+      "id": "d133fdfd-bd2d-4986-9119-00186b5367aa",
+      "name": "Embeddings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d1dbfe93-f4b8-4357-82cb-31852954f0f2",
+          "name": "Generate text embeddings",
+          "request": {
+            "name": "Generate text embeddings",
+            "description": {
+              "content": "Generate embeddings for one or more text inputs using a Nomic embedding model.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "embedding",
+                "text"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"texts\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"model\": \"<string>\",\n  \"task_type\": \"search_document\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e6812d29-1df0-4817-adcb-d2b58de124db",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "embedding",
+                    "text"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"texts\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"model\": \"nomic-embed-text-v1.5\",\n  \"task_type\": \"search_document\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"embeddings\": [\n    [\n      5872.92500389278,\n      8207.336734388457\n    ],\n    [\n      9440.931468159108,\n      8536.462228851226\n    ]\n  ],\n  \"model\": \"string\",\n  \"usage\": {\n    \"key_0\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6f8e3c6e-7691-4b36-aad6-a2cea5237cdd",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "embedding",
+                    "text"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"texts\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"model\": \"nomic-embed-text-v1.5\",\n  \"task_type\": \"search_document\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"key_0\": 8932,\n      \"key_1\": \"string\",\n      \"key_2\": 8289.655883081341,\n      \"key_3\": \"string\"\n    },\n    {\n      \"key_0\": 3470.905856269313,\n      \"key_1\": 8477.880157639993,\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api-atlas.nomic.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3dfe42b2-33bc-48b8-8788-70daea30568f",
+    "name": "Nomic Atlas Embeddings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for the Nomic Platform (Atlas), covering text embedding generation,\nfile upload, document parsing, and asynchronous task status. Documented from\nthe public Nomic developer docs at https://docs.nomic.ai.\n\n\nContact Support:\n Name: Nomic AI",
+      "type": "text/plain"
+    }
+  }
+}

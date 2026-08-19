@@ -1,0 +1,42 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nomic Atlas Embeddings Tasks API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tasks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the status of a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api-atlas.nomic.ai/v1/task/:task_id",
+            "params": [
+              {
+                "name": "task_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the status of an asynchronous task (parsing, extraction)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
