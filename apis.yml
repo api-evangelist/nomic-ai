@@ -31,6 +31,14 @@ tags:
   - Vector Database
   - Data Exploration
   - LLM
+  - Open-Source
+  - RAG
+  - Atlas
+tags_raw:
+  - Embeddings
+  - Vector Database
+  - Data Exploration
+  - LLM
   - Open Source
   - RAG
   - Atlas
@@ -92,6 +100,10 @@ apis:
   humanURL: https://docs.nomic.ai/reference/getting-started
   baseURL: https://api-atlas.nomic.ai
   tags:
+  - Job
+  - Task
+  - Async
+  tags_raw:
   - Jobs
   - Tasks
   - Async
@@ -133,6 +145,11 @@ apis:
   humanURL: https://www.nomic.ai/gpt4all
   baseURL: https://github.com/nomic-ai/gpt4all
   tags:
+  - LLM
+  - Local Inference
+  - Open-Source
+  - On-Device
+  tags_raw:
   - LLM
   - Local Inference
   - Open Source
@@ -188,6 +205,8 @@ apis:
   humanURL: https://docs.nomic.ai/reference/getting-started
   baseURL: https://api-atlas.nomic.ai
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -198,6 +217,8 @@ apis:
   humanURL: https://docs.nomic.ai/reference/getting-started
   baseURL: https://api-atlas.nomic.ai
   tags:
+  - Task
+  tags_raw:
   - Tasks
   properties:
   - type: OpenAPI
