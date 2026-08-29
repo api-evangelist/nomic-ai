@@ -12,6 +12,19 @@ description: >-
   GPUs. The Nomic Atlas REST API at api-atlas.nomic.ai exposes endpoints for
   datasets, maps, embeddings, file parsing, and task status, with official
   Python and TypeScript SDKs.
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: true
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  - pricing
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: self-serve
