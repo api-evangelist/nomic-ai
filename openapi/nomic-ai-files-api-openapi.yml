@@ -1,14 +1,12 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Nomic Atlas Embeddings Files API
+  title: Nomic Atlas Files API
   version: '1.0'
   description: 'REST API for the Nomic Platform (Atlas), covering text embedding generation,
 
     file upload, document parsing, and asynchronous task status. Documented from
 
-    the public Nomic developer docs at https://docs.nomic.ai.
-
-    '
+    the public Nomic developer docs at https://docs.nomic.ai.'
   contact:
     name: Nomic AI
     url: https://docs.nomic.ai

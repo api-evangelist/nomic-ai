@@ -1,9 +1,7 @@
 {
   "provider": "nomic-ai",
   "sources": [
-    "nomic-ai-embeddings-api-openapi.yml",
-    "nomic-ai-files-api-openapi.yml",
-    "nomic-ai-tasks-api-openapi.yml"
+    "_original/nomic-ai-openapi.yml"
   ],
   "outputs": [
     "nomic-ai-embeddings-api-openapi.yml",
@@ -13,6 +11,14 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "nomic-ai-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "nomic-ai-embeddings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nomic-ai-files-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nomic-ai-tasks-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
