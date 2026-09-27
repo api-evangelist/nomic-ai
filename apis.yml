@@ -13,17 +13,22 @@ description: >-
   datasets, maps, embeddings, file parsing, and task status, with official
   Python and TypeScript SDKs.
 deliveryModel:
-  model: unknown
+  model: saas
+  license_evidence:
+    not_product:
+    - nomic-ai/gpt4all
+    - nomic-ai/nomic
+    - nomic-ai/ts-nomic
   open_source: unknown
   commercial: true
   callable_host: true
-  label: Delivery model not determined — needs a product licence on record
+  label: Hosted service · you call their endpoint
   confidence: low
   source:
   - openapi
   - pricing
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: free
@@ -45,7 +50,7 @@ tags:
   - Vector Database
   - Data Exploration
   - LLM
-  - Open-Source
+  - Open Source
   - RAG
   - Atlas
 tags_raw:
@@ -56,6 +61,7 @@ tags_raw:
   - Open Source
   - RAG
   - Atlas
+  - Open-Source
 created: '2026-05-23'
 modified: '2026-05-23'
 specificationVersion: '0.23'
@@ -161,13 +167,14 @@ apis:
   tags:
   - LLM
   - Local Inference
-  - Open-Source
+  - Open Source
   - On-Device
   tags_raw:
   - LLM
   - Local Inference
   - Open Source
   - On-Device
+  - Open-Source
   properties:
   - type: Repository
     url: https://github.com/nomic-ai/gpt4all
