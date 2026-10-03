@@ -52,6 +52,15 @@ paths:
           $ref: '#/components/responses/ValidationError'
 components:
   responses:
+    Forbidden:
+      description: The user is not authorized to perform this action.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              detail:
+                type: string
     ValidationError:
       description: Validation Error
       content:
@@ -64,15 +73,6 @@ components:
                 items:
                   type: object
                   additionalProperties: true
-    Forbidden:
-      description: The user is not authorized to perform this action.
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              detail:
-                type: string
   securitySchemes:
     bearerAuth:
       type: http
