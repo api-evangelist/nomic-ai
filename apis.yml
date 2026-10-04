@@ -47,7 +47,6 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/nomic-ai.png
 tags:
   - Embeddings
-  - Vector Database
   - Data Exploration
   - LLM
   - Open Source
@@ -55,7 +54,6 @@ tags:
   - Atlas
 tags_raw:
   - Embeddings
-  - Vector Database
   - Data Exploration
   - LLM
   - Open Source
@@ -285,3 +283,5 @@ integrations:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-tags-removed:
+- Vector Database
