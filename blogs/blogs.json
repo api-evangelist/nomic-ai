@@ -1,0 +1,21 @@
+{
+  "repo": "nomic-ai",
+  "feeds": [
+    {
+      "source": "https://www.nomic.ai/news",
+      "feed_url": "https://www.nomic.ai/news",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://www.nomic.ai/feed.xml",
+      "feed_url": "https://www.nomic.ai/feed.xml",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-10-10T13:15:00Z"
+}
